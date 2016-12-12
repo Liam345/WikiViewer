@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wiki Viewer</title>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../WikiViewer/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        Search Wiki
+      </h1>
+    </header>
+
+    <input type="text" id="searchInput">
+    <button id="searchBtn">Search</button>
+    <div id="url-container"></div>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script type="text/x-handlebars-template" id="urlTemplate">
+      {{#each query.pages}}
+      <h3>{{fullurl}}</h3>
+      {{/each}}
+    </script>
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    
+    
+    <script src="../WikiViewer/client.js"></script>
+
+  </body>
+</html>
