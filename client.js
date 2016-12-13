@@ -4,7 +4,7 @@ $(function() {
   document.querySelector("#searchBtn").addEventListener("click",function(){
  var searchInput = document.querySelector("#searchInput");
  var searchInputValue = searchInput.value;
-  document.querySelector("#results").innerHTML ="";
+  //document.querySelector("#results").innerHTML ="";
  //if (searchInput && searchInputValue)
  var ourRequest = new XMLHttpRequest();
  ourRequest.open('GET','https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&list=search&srsearch='+searchInputValue);
@@ -27,12 +27,13 @@ ourRequest.send();
 
 
 function createHtml(urlData){
-  var rawTemplate = document.querySelector("#urlTemplate");
+  var rawTemplate = document.querySelector("#resultTemplate");
+
 var compiledTemplate = Handlebars.compile(rawTemplate.innerHTML);
   var ourGeneratedHtml = compiledTemplate(urlData);
   
-  var urlContainer = document.querySelector("#url-container");
-  urlContainer.innerHTML = ourGeneratedHtml;
+  var resultContainer = document.querySelector("#result-container");
+  resultContainer.innerHTML = ourGeneratedHtml ;
 }
 }) ;
 

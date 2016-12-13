@@ -14,20 +14,25 @@
         Search Wiki
       </h1>
     </header>
-
+    <div class="form">
     <input type="text" id="searchInput">
     <button id="searchBtn">Search</button>
-    <div id="url-container"></div> <!-- div for handlebars -->
-    <div id="panel">
-      <div id="results"></div>
+    </div>
+    <div id="result-container"></div> <!-- div for handlebars -->
+    
       </div>
-      <script type="text/x-handlebars-template" id="urlTemplate">
+      <div class="contain">
+      <script type="text/x-handlebars-template" id="resultTemplate">
+      
       {{#each query.search}}
+      <div class="row">
       <a href='https://en.wikipedia.org/wiki/{{title}}'>
       <h3>{{title}}</h3>
       </a>
       {{{snippet}}}
+      </div>
       {{/each}}
+      </div> <!--just added-->
     </script>
 
     <!-- Your web-app is https, so your scripts need to be too -->
