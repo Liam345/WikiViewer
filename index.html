@@ -21,13 +21,17 @@
     <div id="panel">
       <div id="results"></div>
       </div>
-
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script type="text/x-handlebars-template" id="urlTemplate">
+      <script type="text/x-handlebars-template" id="urlTemplate">
       {{#each query.search}}
+      <a href='https://en.wikipedia.org/wiki/{{title}}'>
       <h3>{{title}}</h3>
+      </a>
+      {{{snippet}}}
       {{/each}}
     </script>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    
     <script src="handlebars-v4.0.5.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
