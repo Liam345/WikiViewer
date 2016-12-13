@@ -17,12 +17,15 @@
 
     <input type="text" id="searchInput">
     <button id="searchBtn">Search</button>
-    <div id="url-container"></div>
+    <div id="url-container"></div> <!-- div for handlebars -->
+    <div id="panel">
+      <div id="results"></div>
+      </div>
 
     <!-- Your web-app is https, so your scripts need to be too -->
     <script type="text/x-handlebars-template" id="urlTemplate">
-      {{#each query.pages}}
-      <h3>{{fullurl}}</h3>
+      {{#each query.search}}
+      <h3>{{title}}</h3>
       {{/each}}
     </script>
     <script src="handlebars-v4.0.5.js"></script>
