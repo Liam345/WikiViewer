@@ -13,10 +13,12 @@
       <h1>
         Search Wiki
       </h1>
+
     </header>
     <div class="form">
     <input type="text" id="searchInput">
-    <button id="searchBtn">Search</button>
+    <button id="searchBtn" >Search</button>
+     <button  ><a id="random-article" target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Random</a></button>
     </div>
     <div id="result-container"></div> <!-- div for handlebars -->
     
@@ -26,7 +28,7 @@
       
       {{#each query.search}}
       <div class="row">
-      <a href='https://en.wikipedia.org/wiki/{{title}}'>
+      <a href='https://en.wikipedia.org/wiki/{{title}}' target="_blank">
       <h3>{{title}}</h3>
       </a>
       {{{snippet}}}
